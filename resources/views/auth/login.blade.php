@@ -30,20 +30,21 @@
                     </div>
                 </div>
                 <div class="offset-md-3">
-                    <form action="">
+                    <form action="{{route('login')}}" method= "POST">
+                        @csrf
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="text" name="" id="" class="form-control col-8">
+                            <input type="email" name="email" id="email" class="form-control col-8" value="{{old('email')}}">
                         </div>
                         <div class="form-group">
                             <div class="d-flex justify-content-between col-8 p-0">
                                 <label for="">Password</label>
                                 <label for="" class="text-info">forgot password?</label>
                             </div>
-                            <input type="password" name="" id="" class="form-control col-8">
+                            <input type="password" name="password" id="password" class="form-control col-8">
                         </div>
                             <button type="submit" class="btn btn-info">login</button>
-                            <a href="{{url('login/github')}}" type="submit"
+                            <a href="{{ url('login/github') }}" type="submit"
                             class="btn btn-info">login with github</a>
                         </div>
                     </form>

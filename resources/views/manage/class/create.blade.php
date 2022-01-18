@@ -17,21 +17,29 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Nama Kelas</label>
-                                    <input type="text" name="phone" id="" class="form-control" placeholder="Nama Kelas">
+                                    <select name="class" id="class" class="form-control">
+                                        <option value="" selected disabled>Pilih nama Kelas</option>
+                                        <option value="X">X</option>
+                                        <option value="XI">XI</option>
+                                        <option value="XXI">XII</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Walikelas</label>
-                                    <input type="text" name="phone" id="" class="form-control" placeholder="Walikelas">
+                                    <select name="class" id="class" class="form-control">
+                                        <option value="" selected disabled>Pilih nama Kelas</option>
+                                        <option value="x">Udin</option>
+                                        <option value="xi">Yanto</option>
+                                        <option value="xii">Boboiboy</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Jurusan</label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Pilih Jurusan</option>
-                                    </select>
+                                    <input type="text" name="phone" id="" class="form-control" placeholder="Jurusan">
                                 </div>
                             </div>
                             <div class="col-md-6">
