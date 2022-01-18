@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,7 +39,7 @@ Route::group(['prefix' => 'manage'], function(){
     route::get('/add/form/lesson','Manage\LessonController@create')->name('manage.add.form.lesson');
     //class
     route::get('/class','Manage\ClassController@index')->name('manage.class');
-    route::get('/add/form/class','Manage\ClassController@create')->name('manage.add.form.class');
+    route::get('/add/form/class','Manage\ClassController@create')->name('manage.add.form.kelas');
 });
 
 
@@ -49,14 +51,15 @@ Route::group(['prefix' => 'store'], function(){
 
 Route::group(['prefix' => 'edit'], function () {
     route::get('lesson/{lesson}', 'Manage\LessonController@edit')->name('edit.lesson');
-    route::get('class/{class}', 'Manage\ClassController@edit')->name('edit.class');
+    route::get('class/{clas}', 'Manage\ClassController@edit')->name('edit.class');
 });
 
 Route::group(['prefix' => 'update'], function () {
     route::patch('lesson/{lesson}', 'Manage\LessonController@update')->name('update.lesson');
-    route::patch('class/{class}', 'Manage\ClassController@update')->name('update.class');
+    route::patch('class/{clas}', 'Manage\ClassController@update')->name('update.class');
 });
 
 Route::group(['prefix' => 'destroy'], function () {
     route::delete('lesson/{lesson}', 'Manage\LessonController@destroy')->name('destroy.lesson');
+    route::delete('class/{clas}', 'Manage\ClassController@destroy')->name('destroy.class');
 });

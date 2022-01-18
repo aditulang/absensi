@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Manage;
 
-use App\clas;
+use App\Clas;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ClassController extends Controller
 {
-    public function index()
-    {
-        return view('manage.class.index');
+    public function index(){
+        $class = Clas::latest()->paginate(6);
+
+        return view('manage.class.index', compact('class'));
     }
     public function create()
     {
@@ -31,6 +32,29 @@ class ClassController extends Controller
             'jurusan'       => $request->jurusan,
             'jumlah'        => $request->jumlah,
         ]);
+
+        return redirect()->back();
+
+    }
+    public function edit($id)
+    {
+        $clas = Clas::findOrFail($id);
+
+        return view('manage.class.edit', compact('clas'));
+    }
+    public function update(Request $request, $id)
+    {
+        $clas = Clas::findOrFail($id);
+
+        $clas->update($request->all());
+
+        return redirect()->back();
+    }
+    public function destroy(Request $request, $id)
+    {
+        $clas = Clas::findOrFail($id);
+
+        $clas->delete($request->all());
 
         return redirect()->back();
     }
