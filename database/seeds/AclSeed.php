@@ -1,8 +1,9 @@
 <?php
-use App\User;
-use App\Role;
-use App\Permission;
+
 use Illuminate\Database\Seeder;
+use App\Role;
+Use App\User;
+Use App\Permission;
 
 class AclSeed extends Seeder
 {
@@ -11,8 +12,7 @@ class AclSeed extends Seeder
      *
      * @return void
      */
-
-     public function run()
+    public function run()
     {
         // Reset cached roles and permissions.
         app()['cache']->forget('spatie.permission.cache');

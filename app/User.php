@@ -1,10 +1,11 @@
 <?php
 
 namespace App;
-use Spatie\Permission\Traits\HasRoles;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'nisn', 'password', 'github_id', 'avatar'
+        'name',
+        'email',
+        'nisn',
+        'password',
+        'provider',
+        'provider_id',
     ];
 
     /**
